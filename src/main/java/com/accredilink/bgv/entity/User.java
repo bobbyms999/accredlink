@@ -14,7 +14,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
 	@Id
@@ -37,16 +37,16 @@ public class User {
 	private String ssnNumber;
 	@Column(name = "phone_number")
 	private Long phoneNumber;
-	
-	@OneToOne
+
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_id")
 	private Address address;
-	
-	@OneToOne
+
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "company_id")
 	private Company company;
-	
-	@OneToOne
+
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_type_id")
 	private UserType UserType;
 
@@ -233,5 +233,7 @@ public class User {
 			return false;
 		return true;
 	}
+
+	
 
 }

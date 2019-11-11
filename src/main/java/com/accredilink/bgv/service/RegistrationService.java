@@ -11,11 +11,6 @@ public interface RegistrationService {
 	 */
 	public String registration(RegistrationDTO registrationDTO) throws Exception;
 
-	/**
-	 * @param userName
-	 * @param password
-	 * @return
-	 */
-	public String login(String userName, String password);
+
 
 }

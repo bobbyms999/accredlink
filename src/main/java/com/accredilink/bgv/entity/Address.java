@@ -42,103 +42,78 @@ public class Address {
 	private String modifiedBy;
 	@Column(name = "active")
 	private boolean active;
-
 	public int getAddressId() {
 		return addressId;
 	}
-
 	public void setAddressId(int addressId) {
 		this.addressId = addressId;
 	}
-
 	public String getAddress_line1() {
 		return address_line1;
 	}
-
 	public void setAddress_line1(String address_line1) {
 		this.address_line1 = address_line1;
 	}
-
 	public String getAddressLine2() {
 		return addressLine2;
 	}
-
 	public void setAddressLine2(String addressLine2) {
 		this.addressLine2 = addressLine2;
 	}
-
 	public String getCity() {
 		return city;
 	}
-
 	public void setCity(String city) {
 		this.city = city;
 	}
-
 	public String getState() {
 		return state;
 	}
-
 	public void setState(String state) {
 		this.state = state;
 	}
-
 	public String getCountry() {
 		return country;
 	}
-
 	public void setCountry(String country) {
 		this.country = country;
 	}
-
 	public int getZip() {
 		return zip;
 	}
-
 	public void setZip(int zip) {
 		this.zip = zip;
 	}
-
 	public LocalDate getCreatedDate() {
 		return createdDate;
 	}
-
 	public void setCreatedDate(LocalDate createdDate) {
 		this.createdDate = createdDate;
 	}
-
 	public LocalDate getModifiedDate() {
 		return modifiedDate;
 	}
-
 	public void setModifiedDate(LocalDate modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
-
 	public String getCreatedBy() {
 		return createdBy;
 	}
-
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
-
 	public String getModifiedBy() {
 		return modifiedBy;
 	}
-
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
-
 	public boolean isActive() {
 		return active;
 	}
-
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -157,7 +132,6 @@ public class Address {
 		result = prime * result + zip;
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -220,5 +194,7 @@ public class Address {
 			return false;
 		return true;
 	}
-
+	
+	
+	
 }

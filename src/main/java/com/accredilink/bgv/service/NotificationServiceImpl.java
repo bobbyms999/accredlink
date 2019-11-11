@@ -1,6 +1,5 @@
 package com.accredilink.bgv.service;
 
-
 import javax.mail.internet.MimeMessage;
 import javax.transaction.Transactional;
 
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import com.accredilink.bgv.dto.RegistrationDTO;
 import com.accredilink.bgv.util.Constants;
-
 @Service
 public class NotificationServiceImpl implements NotificationService {
 
@@ -30,13 +28,17 @@ public class NotificationServiceImpl implements NotificationService {
 	public boolean registrationNotification(RegistrationDTO registrationDTO) {
 		
 		try {
+			StringBuilder mailBody = new StringBuilder();
 			MimeMessage mimeMessage = mailSender.createMimeMessage();
 			MimeMessageHelper msgHelper = new MimeMessageHelper(mimeMessage,true);
 			msgHelper.setFrom(userMailFrom);
-			msgHelper.setTo("vishnupedireddy123@gmail.com");
+			msgHelper.setTo(registrationDTO.getEmailId());
 			msgHelper.setSubject(Constants.ACCREDILINK_REGISTRATION_SUCCESSFUL);
-			msgHelper.setText("Username : " + registrationDTO.getEmailId());
-			msgHelper.setText("Password : " + registrationDTO.getPassword());
+			
+			mailBody.append("Username : " + registrationDTO.getEmailId() + "\n");
+			mailBody.append("Password : " + registrationDTO.getPassword());
+			
+			msgHelper.setText(mailBody.toString());
 			mailSender.send(mimeMessage);
 			
 		} catch(Exception e) {
